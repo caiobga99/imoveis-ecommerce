@@ -9,51 +9,44 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Area do Candidato",
+      href: "/candidato",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Area do Inquilino",
+      href: "/inquilino",
     },
     {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
+      label: "FAQ",
+      href: "/faq",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Home",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Area do Candidato",
+      href: "/candidato",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Area do Inquilino",
+      href: "/inquilino",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "Registrar",
+      href: "/register",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "Entrar",
+      href: "/login",
     },
     {
-      label: "Settings",
-      href: "/settings",
+      label: "FAQ",
+      href: "/faq",
     },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
+
     {
       label: "Logout",
       href: "/logout",
