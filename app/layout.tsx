@@ -8,7 +8,9 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import { JetBrains_Mono } from "next/font/google";
 
+const jetBrains = JetBrains_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -37,8 +39,8 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          "min-h-screen bg-background antialiased",
+          jetBrains.className
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
@@ -48,14 +50,38 @@ export default function RootLayout({
               {children}
             </main>
             <footer className="w-full flex items-center justify-center py-3">
+              <span className="text-default-600">Developed by</span>
               <Link
                 isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
+                className="flex items-center  m-1 text-current"
+                href="https://github.com/caiobga99"
                 title="nextui.org homepage"
               >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">NextUI</p>
+                <p className="text-primary">CAIO</p>
+              </Link>{" "}
+              <Link
+                isExternal
+                className="flex items-center  m-1 text-current"
+                href="https://github.com/GabrielAlbanez"
+                title="nextui.org homepage"
+              >
+                <p className="text-primary">GABRIEL</p>
+              </Link>{" "}
+              <Link
+                isExternal
+                className="flex items-center  m-1 text-current"
+                href="https://github.com/caiobga99"
+                title="nextui.org homepage"
+              >
+                <p className="text-primary">FERNANDO</p>
+              </Link>{" "}
+              <Link
+                isExternal
+                className="flex items-center  m-1 text-current"
+                href="https://github.com/caiobga99"
+                title="nextui.org homepage"
+              >
+                <p className="text-primary">KAIQUE</p>
               </Link>
             </footer>
           </div>
