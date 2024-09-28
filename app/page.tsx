@@ -205,13 +205,13 @@ export default function Home() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <Spinner label="Loading..." color="warning" />
+        <Spinner label="Loading..."/>
       </div>
     );
   }
 
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-1">
+    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-1 ">
       <div className="inline-block max-w-xl text-center mb-4">
         <span className={title()}>Destaque de&nbsp;</span>
         <span className={title({ color: "violet" })}>imóveis&nbsp;</span>

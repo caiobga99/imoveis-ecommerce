@@ -2,15 +2,15 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import { JetBrains_Mono } from "next/font/google";
 
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
-import { JetBrains_Mono } from "next/font/google";
 
 const jetBrains = JetBrains_Mono({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background antialiased",
-          jetBrains.className
+          jetBrains.className,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
