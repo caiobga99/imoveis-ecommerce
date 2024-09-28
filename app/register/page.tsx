@@ -1,11 +1,13 @@
 "use client";
 import { Checkbox, Input, Button } from "@nextui-org/react";
-import { EyeSlashFilledIcon, EyeFilledIcon } from "@/components/icons";
 import { useState } from "react";
 import NextLink from "next/link";
 import { useForm, SubmitHandler, UseFormRegister } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+
+import { title, subtitle } from "@/components/primitives";
+import { EyeSlashFilledIcon, EyeFilledIcon } from "@/components/icons";
 
 const schema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
@@ -63,47 +65,56 @@ export default function RegisterPage() {
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
       className="container w-full h-full flex flex-col gap-5 justify-between"
+      onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex flex-col text-left justify-center gap-2">
-        <h1 className="text-2xl">Criar uma conta</h1>
-        <h2 className="text-base">
-          Cadastre-se para uma nova conta para começar
-        </h2>
+        <div>
+          <span className="text-3xl lg:text-4xl">Crie uma nova&nbsp;</span>
+          <span
+            className={title({
+              color: "violet",
+              size: "sm",
+            })}
+          >
+            conta&nbsp;
+          </span>
+        </div>
+
+        <span className={subtitle()}>Cadastre-se começar uma nova conta!</span>
       </div>
       <div className="flex flex-col justify-center h-full w-full gap-4">
         <InputField
-          label="Nome"
-          type="text"
-          register={register("name")}
           error={errors.name}
+          label="Nome"
+          register={register("name")}
+          type="text"
         />
         <InputField
-          label="Email"
-          type="email"
-          register={register("email")}
           error={errors.email}
+          label="Email"
+          register={register("email")}
+          type="email"
         />
         <InputField
-          label="Senha"
-          type={isVisible ? "text" : "password"}
-          register={register("password")}
-          error={errors.password}
           endContent={
             <button
+              aria-label="toggle password visibility"
               className="focus:outline-none"
               type="button"
               onClick={toggleVisibility}
-              aria-label="toggle password visibility"
             >
               {isVisible ? <EyeSlashFilledIcon /> : <EyeFilledIcon />}
             </button>
           }
+          error={errors.password}
+          label="Senha"
+          register={register("password")}
+          type={isVisible ? "text" : "password"}
         />
         <CheckboxField
-          register={register("agreeToTerms")}
           error={errors.agreeToTerms}
+          register={register("agreeToTerms")}
         />
         {serverError && (
           <span className="text-red-500 text-sm mt-1">{serverError}</span>
@@ -112,17 +123,17 @@ export default function RegisterPage() {
           <span className="text-green-500 text-sm mt-1">{successMessage}</span>
         )}
         <Button
-          type="submit"
-          color="primary"
-          size="md"
           className="w-full"
+          color="primary"
           disabled={loading}
+          size="md"
+          type="submit"
         >
           {loading ? "Registrando..." : "Criar Conta"}
         </Button>
         <div className="w-full text-center">
           Já possui uma conta?{" "}
-          <NextLink href="/login" className="text-primary font-bold">
+          <NextLink className="text-primary font-bold" href="/login">
             Entrar
           </NextLink>
         </div>
@@ -149,13 +160,13 @@ const InputField: React.FC<InputFieldProps> = ({
   <div className="w-full text-left">
     <Input
       label={label}
-      variant="underlined"
       placeholder={`Digite seu ${label.toLowerCase()}`}
       type={type}
+      variant="underlined"
       {...register}
+      endContent={endContent}
       isInvalid={!!error}
       size="lg"
-      endContent={endContent}
     />
     {error && (
       <span className="text-red-500 text-sm mt-1 ml-2">{error.message}</span>

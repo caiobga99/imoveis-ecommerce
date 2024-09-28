@@ -6,6 +6,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
+import { subtitle, title } from "@/components/primitives";
 import { EyeSlashFilledIcon, EyeFilledIcon } from "@/components/icons";
 
 // Definindo o esquema de validação com Zod
@@ -68,8 +69,21 @@ export default function LoginPage() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex flex-col text-left justify-center gap-2">
-        <h1 className="text-2xl">Entre com sua conta</h1>
-        <h2 className="text-base">Faça o login com sua conta para continuar</h2>
+        <div>
+          <span className="text-3xl lg:text-4xl">Entre com sua&nbsp;</span>
+          <span
+            className={title({
+              color: "violet",
+              size: "sm",
+            })}
+          >
+            conta&nbsp;
+          </span>
+        </div>
+
+        <span className={subtitle()}>
+          Faça o login com sua conta para continuar
+        </span>
       </div>
       <div className="flex flex-col justify-center h-full w-full gap-4 text-left">
         <div>
