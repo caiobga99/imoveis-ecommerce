@@ -19,7 +19,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Image } from "@nextui-org/image";
-import { MouseEvent } from 'react';
+
 import {
   EyeSlashFilledIcon,
   EyeFilledIcon,
@@ -74,7 +74,7 @@ export default function InquilinoPage() {
     console.log("Dados enviados:", data);
     onOpenChange();
   };
-  const handleButtonPress = (e: any) => {
+  const handleButtonPress = (e: PressEvent) => {
   // Chama handleSubmit com o evento se necessário
   handleSubmit(onSubmit)(e);
 };
