@@ -119,7 +119,7 @@ export default function InquilinoPage() {
             <div>
               <span className="text-3xl lg:text-4xl">Nome do&nbsp;</span>
               <span className={title({ color: "violet", size: "sm" })}>
-                Inquilino&nbsp;
+                Candidato&nbsp;
               </span>
             </div>
           </div>
@@ -310,7 +310,7 @@ export default function InquilinoPage() {
           <div>
             <span className="text-3xl lg:text-4xl">Nome do&nbsp;</span>
             <span className={title({ color: "violet", size: "sm" })}>
-              Inquilino&nbsp;
+              Candidato&nbsp;
             </span>
           </div>
         </div>
