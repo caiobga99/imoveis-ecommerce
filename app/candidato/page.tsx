@@ -19,7 +19,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Image } from "@nextui-org/image";
-
+import { PressEvent } from 'react'; 
 import {
   EyeSlashFilledIcon,
   EyeFilledIcon,
