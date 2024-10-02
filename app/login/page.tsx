@@ -9,14 +9,12 @@ import { z } from "zod";
 import { subtitle, title } from "@/components/primitives";
 import { EyeSlashFilledIcon, EyeFilledIcon } from "@/components/icons";
 
-// Definindo o esquema de validação com Zod
 const schema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
   email: z.string().email("Formato de email inválido"),
   password: z.string().min(4, "A senha deve ter pelo menos 4 caracteres"),
 });
 
-// Tipo para os dados do formulário
 type FormData = z.infer<typeof schema>;
 
 const simulateApiCall = (data: FormData) => {
@@ -150,7 +148,7 @@ export default function LoginPage() {
         )}
         <div className="w-full">
           <Button
-            className="w-full flex items-center justify-center" // Alinha o conteúdo do botão
+            className="w-full flex items-center justify-center"
             color="primary"
             disabled={loading}
             size="md"

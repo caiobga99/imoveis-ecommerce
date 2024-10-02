@@ -61,7 +61,7 @@ export default function InquilinoPage() {
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log("Dados enviados:", data);
-    onOpenChange(); // Fechar o modal após submissão
+    onOpenChange(); 
   };
 
   const fetchData = async () => {
