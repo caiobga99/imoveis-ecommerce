@@ -319,7 +319,11 @@ export const HeartIcon = ({
   </svg>
 );
 
-export const MailIcon = () => (
+interface MailIconProps {
+  className?: string; // Adicionando className como opcional
+}
+
+const MailIcon: React.FC<MailIconProps> = ({ className }) => (
   <svg
     aria-hidden="true"
     fill="none"
