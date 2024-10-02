@@ -54,7 +54,7 @@ export default function RegisterPage() {
     try {
       await simulateApiCall(data);
       setSuccessMessage(
-        "Registro bem-sucedido! Você sera redirecionado para a sua pagina."
+        "Registro bem-sucedido! Você sera redirecionado para a sua pagina.",
       );
     } catch (error) {
       setServerError(error as string);
