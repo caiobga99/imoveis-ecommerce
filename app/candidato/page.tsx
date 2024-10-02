@@ -70,10 +70,14 @@ export default function InquilinoPage() {
 
   const toggleVisibility = () => setIsVisible((prev) => !prev);
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit: SubmitHandler<FormData> = (data: any) => {
     console.log("Dados enviados:", data);
     onOpenChange();
   };
+  const handleButtonPress = (e: PressEvent) => {
+  // Chama handleSubmit com o evento se necessário
+  handleSubmit(onSubmit)(e);
+};
 
   const fetchData = async () => {
     setLoading(true);
@@ -200,7 +204,7 @@ export default function InquilinoPage() {
                     <Button color="danger" variant="flat" onPress={onClose}>
                       Fechar
                     </Button>
-                    <Button color="primary" onPress={handleSubmit(onSubmit)}>
+                    <Button color="primary" onPress={handleButtonPress}>
                       Adicionar
                     </Button>
                   </ModalFooter>
