@@ -74,7 +74,7 @@ export default function InquilinoPage() {
     console.log("Dados enviados:", data);
     onOpenChange();
   };
-  const handleButtonPress = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleButtonPress = (e: any) => {
   // Chama handleSubmit com o evento se necessário
   handleSubmit(onSubmit)(e);
 };
